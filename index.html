@@ -35,27 +35,37 @@
       color: #fff;
       text-align: center;
       padding: 20px;
-      display: none; /* Oculto por defecto */
+      opacity: 0;
+      transition: opacity 2s ease;
+      visibility: hidden;
+    }
+
+    .content.visible {
+      opacity: 1;
+      visibility: visible;
     }
 
     h1 {
-      font-size: 2.5em;
+      font-size: 2.7em;
       text-shadow: 2px 2px 8px #000;
+      font-weight: 300;
+      letter-spacing: 1px;
+      line-height: 1.5;
     }
 
     .show-button {
       position: absolute;
-      top: 20px;
+      top: 50%;
       left: 50%;
-      transform: translateX(-50%);
-      padding: 10px 20px;
-      font-size: 1rem;
+      transform: translate(-50%, -50%);
+      padding: 12px 24px;
+      font-size: 1.1rem;
       border: none;
       background-color: rgba(255,255,255,0.2);
       color: white;
       border-radius: 5px;
       cursor: pointer;
-      backdrop-filter: blur(5px);
+      backdrop-filter: blur(6px);
     }
 
     .show-button:hover {
@@ -81,12 +91,19 @@
   </div>
 
   <!-- Botón para mostrar el texto -->
-  <button class="show-button" onclick="document.querySelector('.content').style.display='flex'; this.style.display='none';">Ver mensaje</button>
+  <button class="show-button" onclick="mostrarMensaje()">Ver mensaje</button>
 
   <!-- Mensaje oculto -->
   <div class="content">
     <h1>Buenos dias Bobita de la cabeza, ¿con sueño? pues X2, Bonito dia Solecito🌞 portate bien, chambea con calma, comeras</h1>
   </div>
+
+  <script>
+    function mostrarMensaje() {
+      document.querySelector('.content').classList.add('visible');
+      document.querySelector('.show-button').style.display = 'none';
+    }
+  </script>
 
 </body>
 </html>
