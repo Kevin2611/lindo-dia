@@ -35,11 +35,31 @@
       color: #fff;
       text-align: center;
       padding: 20px;
+      display: none; /* Oculto por defecto */
     }
 
     h1 {
       font-size: 2.5em;
       text-shadow: 2px 2px 8px #000;
+    }
+
+    .show-button {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 10px 20px;
+      font-size: 1rem;
+      border: none;
+      background-color: rgba(255,255,255,0.2);
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      backdrop-filter: blur(5px);
+    }
+
+    .show-button:hover {
+      background-color: rgba(255,255,255,0.3);
     }
 
     iframe {
@@ -60,7 +80,10 @@
     </iframe>
   </div>
 
-  <!-- Mensaje al frente -->
+  <!-- Botón para mostrar el texto -->
+  <button class="show-button" onclick="document.querySelector('.content').style.display='flex'; this.style.display='none';">Ver mensaje</button>
+
+  <!-- Mensaje oculto -->
   <div class="content">
     <h1>Buenos dias Bobita de la cabeza, ¿con sueño? pues X2, Bonito dia Solecito🌞 portate bien, chambea con calma, comeras</h1>
   </div>
