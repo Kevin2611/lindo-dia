@@ -26,10 +26,6 @@
       z-index: -1;
     }
 
-    .audio-background {
-      display: none;
-    }
-
     .content {
       display: flex;
       align-items: center;
@@ -50,7 +46,7 @@
     }
 
     h1 {
-      font-size: 2.7em;
+      font-size: 1.6em; /* Letra más pequeña */
       text-shadow: 2px 2px 8px #000;
       font-weight: 300;
       letter-spacing: 1px;
@@ -76,30 +72,25 @@
       background-color: rgba(255,255,255,0.3);
     }
 
-    iframe {
+    iframe.bg-video {
       width: 100vw;
       height: 100vh;
       border: none;
+    }
+
+    iframe.bg-audio {
+      display: none;
     }
   </style>
 </head>
 <body>
 
-  <!-- Fondo de video visible -->
+  <!-- Video de fondo -->
   <div class="video-background">
-    <iframe 
+    <iframe class="bg-video"
       src="https://www.youtube.com/embed/58YjsK8NYPE?autoplay=1&mute=1&loop=1&playlist=58YjsK8NYPE"
       allow="autoplay"
       allowfullscreen>
-    </iframe>
-  </div>
-
-  <!-- Música de fondo (solo audio, oculto) -->
-  <div class="audio-background">
-    <iframe
-      src="https://www.youtube.com/embed/E3QiD99jPAg?autoplay=1&loop=1&playlist=E3QiD99jPAg"
-      allow="autoplay"
-      frameborder="0">
     </iframe>
   </div>
 
@@ -111,16 +102,25 @@
     <h1>Preciosa buenos días 💖</h1>
   </div>
 
+  <!-- Contenedor para insertar el audio después -->
+  <div id="audio-container"></div>
+
   <script>
     function mostrarMensaje() {
       document.querySelector('.content').classList.add('visible');
       document.querySelector('.show-button').style.display = 'none';
+
+      // Crear iframe de audio al hacer clic
+      const audioFrame = document.createElement('iframe');
+      audioFrame.src = "https://www.youtube.com/embed/E3QiD99jPAg?autoplay=1&loop=1&playlist=E3QiD99jPAg";
+      audioFrame.className = "bg-audio";
+      audioFrame.allow = "autoplay";
+      document.getElementById("audio-container").appendChild(audioFrame);
     }
   </script>
 
 </body>
 </html>
-
 
 
 
