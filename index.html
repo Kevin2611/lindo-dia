@@ -28,6 +28,7 @@
 
     .content {
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       height: 100%;
@@ -45,12 +46,29 @@
       visibility: visible;
     }
 
-    h1 {
-      font-size: 1.6em; /* Letra más pequeña */
+    .message {
+      font-size: 1.4em; /* Letra más pequeña que antes */
       text-shadow: 2px 2px 8px #000;
       font-weight: 300;
-      letter-spacing: 1px;
-      line-height: 1.5;
+      letter-spacing: 0.5px;
+      line-height: 1.8;
+      white-space: pre-line; /* Para que se respeten los saltos de línea */
+    }
+
+    .tiktok-button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 6px;
+      background-color: rgba(255, 255, 255, 0.2);
+      color: white;
+      cursor: pointer;
+      backdrop-filter: blur(6px);
+    }
+
+    .tiktok-button:hover {
+      background-color: rgba(255, 255, 255, 0.3);
     }
 
     .show-button {
@@ -95,15 +113,31 @@
   </div>
 
   <!-- Botón para mostrar el mensaje -->
-  <button class="show-button" onclick="mostrarMensaje()">Aquí Bobita😉</button>
+  <button class="show-button" onclick="mostrarMensaje()">Ver mensaje</button>
 
   <!-- Mensaje oculto -->
   <div class="content">
-    <h1>Preciosa buenos días 💖
-rtfjgkjblnlm</h1>
+    <div class="message">
+Preciosa buenos días💔
+
+Espero y hayas descansado lo suficiente para afrontar este día, esta semana 🥱 que será
+larga, pero agradezco que tengamos chamba.
+
+Cuídate mi cielo, vas a estar a full lose, comerás y se que esta vez no serán galletas
+🙂 pero pues ajá.
+
+Lindo día solecito, no te estreses tanto, besito🌷
+
+ah¡ cierto y esto también... >
+    </div>
+
+    <!-- Botón de TikTok -->
+    <a href="https://www.tiktok.com/t/ZT6U9vTdL/" target="_blank">
+      <button class="tiktok-button">🎵 Abrir TikTok</button>
+    </a>
   </div>
 
-  <!-- Contenedor para insertar el audio después -->
+  <!-- Contenedor para audio oculto -->
   <div id="audio-container"></div>
 
   <script>
@@ -111,7 +145,7 @@ rtfjgkjblnlm</h1>
       document.querySelector('.content').classList.add('visible');
       document.querySelector('.show-button').style.display = 'none';
 
-      // Crear iframe de audio al hacer clic
+      // Reproduce la canción al hacer clic
       const audioFrame = document.createElement('iframe');
       audioFrame.src = "https://www.youtube.com/embed/E3QiD99jPAg?autoplay=1&loop=1&playlist=E3QiD99jPAg";
       audioFrame.className = "bg-audio";
@@ -122,9 +156,4 @@ rtfjgkjblnlm</h1>
 
 </body>
 </html>
-
-
-
-
-
 
