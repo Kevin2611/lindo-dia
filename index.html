@@ -26,6 +26,10 @@
       z-index: -1;
     }
 
+    .audio-background {
+      display: none;
+    }
+
     .content {
       display: flex;
       align-items: center;
@@ -81,22 +85,30 @@
 </head>
 <body>
 
-  <!-- Fondo de YouTube con autoplay, mute, loop -->
+  <!-- Fondo de video visible -->
   <div class="video-background">
     <iframe 
-     src="https://www.youtube.com/embed/58YjsK8NYPE?autoplay=1&mute=1&loop=1&playlist=58YjsK8NYPE"
-
+      src="https://www.youtube.com/embed/58YjsK8NYPE?autoplay=1&mute=1&loop=1&playlist=58YjsK8NYPE"
       allow="autoplay"
       allowfullscreen>
     </iframe>
   </div>
 
-  <!-- Botón para mostrar el texto -->
+  <!-- Música de fondo (solo audio, oculto) -->
+  <div class="audio-background">
+    <iframe
+      src="https://www.youtube.com/embed/E3QiD99jPAg?autoplay=1&loop=1&playlist=E3QiD99jPAg"
+      allow="autoplay"
+      frameborder="0">
+    </iframe>
+  </div>
+
+  <!-- Botón para mostrar el mensaje -->
   <button class="show-button" onclick="mostrarMensaje()">Ver mensaje</button>
 
   <!-- Mensaje oculto -->
   <div class="content">
-    <h1>Presiosa buenos dias💖*</h1>
+    <h1>Preciosa buenos días 💖</h1>
   </div>
 
   <script>
@@ -108,7 +120,6 @@
 
 </body>
 </html>
-
 
 
 
